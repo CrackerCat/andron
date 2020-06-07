@@ -21,8 +21,11 @@ def info_warning(string):
 def info_success(string):
     print("{0}[+] {1}{2}{3}".format(GREEN,WHITE,string,ENDC))
     
-def info_question(string):
-    print("{0}[?] {1}{2}{3}".format(WW,WHITE,string,ENDC))
+def info_general_raw(string):
+    return "{0}[>] {1}{2}{3}".format(WW,WHITE,string,ENDC)
+    
+def info_question_raw(string):
+    return "{0}[?] {1}{2}{3}".format(WW,WHITE,string,ENDC)
     
 def info_info(string):
     print("{0}[i] {1}{2}{3}".format(WW,WHITE,string,ENDC))
