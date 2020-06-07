@@ -37,7 +37,7 @@ def update():
 def main():
     show_banner()
     show_graphic()
-    option = int(input('('+h.GENERIC+'andron'+h.ENDC+')'))
+    option = int(input('('+h.GENERIC+'andron'+h.ENDC+')>'))
     while True:
         if option == 1:
             start_listener()
