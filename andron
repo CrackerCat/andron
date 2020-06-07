@@ -1,1 +1,49 @@
 #!/usr/bin/env python3
+
+import core.helper as h
+import core.payload as p
+import core.listener as l
+from core.system import *
+import sys
+import os
+
+def show_graphic():
+    print(h.GENERIC+" 1"+h.ENDC+") Start listener")
+    print(h.GENERIC+" 2"+h.ENDC+") Create payload")
+    print(h.GENERIC+" 3"+h.ENDC+") Update Andron")
+    print(h.GENERIC+" 4"+h.ENDC+") Exit Andron")
+    print("")
+    
+def show_banner():
+    os.system("clear")
+    os.system("cat banner/banner.txt")
+    print("")
+    print("Andron Framework "+h.GENERIC+"v1.0"+h.ENDC)
+    print(h.WHITE+"-"*19)
+    print("")
+    
+def payload_menu():
+    show_banner()
+    p.show_menu()
+    
+def start_listener():
+    show_banner()
+    l.start()
+    
+def update():
+    show_banner()
+    os.system("chmod +x etc/update.sh && etc/update.sh")
+    
+def main():
+    show_banner()
+    show_graphic()
+    option = int(input('('+h.GENERIC+'andron'+h.ENDC+')'))
+    while True:
+        if option == 1:
+            start_listener()
+        elif option == 2:
+            payload_menu()
+        elif option == 3:
+            update()
+        elif option == 4:
+            exit_andron()
