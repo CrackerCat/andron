@@ -21,3 +21,17 @@
 import core.helper as h
 
 def start():
+    lhost = input(h.info_general_raw("Local host: ")).strip(" ")
+    while True:
+        lport = input(h.info_general_raw("Local port: ")).strip(" ")
+        if not lport:
+            lport = 4444
+        try:
+            lport = int(lport)
+        except ValueError:
+            h.info_error("Invalid port, please enter a valid integer.")
+            continue
+        if lport < 1024:
+            h.info_error("Invalid port, please enter a value >= 1024.")
+            continue
+        break
